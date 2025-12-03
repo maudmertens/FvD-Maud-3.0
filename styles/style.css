@@ -5,7 +5,10 @@
   box-sizing:border-box;  
 }
 
-
+* {
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -15,8 +18,11 @@
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:#fff;
+	--color-background:#0093d0;
+	--font-family:"Helvetica Neue";
+	--color-dark:#000;
+
 }
 
 
@@ -27,5 +33,389 @@
 /* JOUW STYLING */
 /****************/
 
-/* jouw code */
+body {
+	background-color: var(--color-background);
+	margin-top: 1em;
+	font-family: var(--font-family);
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 1rem;
+}
 
+/* ************** */
+/* button menu */
+/* ************** */
+header {
+	position: relative;
+}
+
+/* hoe kan de button overal boven blijven? */
+header button {
+	padding: 1.5em 1em;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	border: none;
+	background-color: pink;
+	margin-left: 0.4em;
+	cursor: pointer;
+	position: sticky;
+	top: 0.4em;
+}
+
+header button span {
+	grid-row-start: 1;
+	grid-column-start: 1;
+	width: 1.5em;
+	height: .2em;
+	background-color: var(--color-text);
+
+	transition-duration: .5s;
+}
+
+header button span:nth-last-of-type(1) {
+	transform: translateY(-.5em);
+
+}
+
+header button span:nth-last-of-type(3) {
+	transform: translateY(.5em);
+	
+}
+
+/* button open */
+header button[aria-expanded="true"] span:nth-last-of-type(1) {
+	transform:rotate(45deg) scalex(1.25);
+}
+
+header button[aria-expanded="true"] span:nth-last-of-type(2) {
+	opacity: 0%;
+}
+
+header button[aria-expanded="true"] span:nth-last-of-type(3) {
+	transform:rotate(-45deg) scalex(1.25);
+}
+
+
+/* *********
+nav en button combineren
+********* */
+
+header nav {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 4em;
+	bottom: 0;
+	background-color:#0093d0;
+	color: var(--color-text);
+	z-index: 10;
+	translate: -100% 0%;
+	transition: translate 0.3s;
+}
+
+header nav.toonMenu {
+	translate: 0% 0%;
+}
+
+header nav.toonMenu button span:nth-last-of-type(1) {
+	transform:rotate(45deg) scalex(1.25);
+}
+
+header nav.toonMenu button span:nth-last-of-type(2) {
+	opacity: 0%;
+}
+
+header nav.toonMenu button span:nth-last-of-type(3) {
+	transform:rotate(-45deg) scalex(1.25);
+}
+
+header nav ul {
+	padding-left: 1em;
+}
+
+header p {
+	font-weight: 600;
+	color: var(--color-text);
+	letter-spacing: -0.02em;
+	margin-left: 1em
+}
+
+header p span {
+	opacity: 0.3;
+}
+
+/* ik probeer de opacity van het woord cultuur uit te zetten, maar krijg het niet voor elkaar */
+header p a {
+	color: var(--color-text);
+	opacity: 1;
+	text-decoration: underline;
+}
+
+
+/* header p a:visited {
+	color: var(--color-text);
+	opacity: 1;
+} */
+
+
+nav a {
+	text-decoration: none;
+}
+
+/* kleur nav werkt niet */
+/* nav a:visited {
+	color: var(--color-dark);
+} */
+
+li {
+	list-style-type: none;
+}
+
+nav li {
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.5em;
+
+}
+
+h1 {
+	color: var(--color-text);
+	/* font-family: var(--font-family); */
+	font-size: 8em;
+	letter-spacing: -0.04em;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	margin: 0em;
+	margin-left: .07em;
+	padding: 0em;
+	line-height: 1em;
+}
+
+h2 {
+	color: var(--color-text);
+	/* font-family: var(--font-family); */
+	letter-spacing: -0.04em;
+	font-size: 6em;
+	overflow-x: hidden;
+	margin: 0em;
+	margin-left: .07em;
+	padding: 0em;
+}
+
+/* *******
+stijl van uitgelichte linkjes
+******* */
+main > section:nth-of-type(1) > ul {
+	display: flex;
+	overflow: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	overscroll-behavior-x: contain;
+}
+
+main > section:first-of-type > ul li {
+	position: relative;
+	flex-basis: 20em;
+	flex-shrink: 0;
+	scroll-snap-align: center;
+}
+
+main > section:first-of-type > ul li img {
+	height: 25em;
+	object-fit: cover;
+}
+
+main > section:first-of-type > ul li a {
+	position: absolute;
+	left: 0.5em;
+	bottom: 0.5em;
+	z-index: 5;
+
+	display: grid;
+}
+
+/* de tekst over de afbeeldingen stijl */
+main > section:first-of-type > ul li a span:nth-of-type(1) {
+	background-color: black;
+	font-weight: 200;
+	font-size: 1em;
+	padding: 0.2em;
+	margin: 0.1em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	border-radius: 15em;
+}
+
+main > section:first-of-type > ul li a span:nth-of-type(2) {
+	font-size: 1.5em;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+}
+
+main > section:first-of-type > ul li a span:nth-of-type(3) {
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+/* 2e en 4e blokje beetje andere stijling */
+/* 2e blokje */
+main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(2) {
+	background-color: black;
+	font-weight: 200;
+	font-size: 1em;
+	padding: 0.2em;
+	margin: 0.1em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	border-radius: 15em;
+}
+
+main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(3) {
+	font-size: 1.5em;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+}
+
+main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(4) {
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+
+/* 4e blokje */
+main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(2) {
+	background-color: black;
+	font-weight: 200;
+	font-size: 1em;
+	padding: 0.2em;
+	margin: 0.1em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	border-radius: 15em;
+}
+
+main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(3) {
+	font-size: 1.5em;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+}
+
+main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(4) {
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+
+/* ******* */
+/* stijl van de vandaag linkjes */
+/* ******* */
+
+h3 {
+	color: var(--color-text);
+	letter-spacing: -0.03em;
+	font-size: 2em;
+	font-weight: 500;
+	overflow-x: hidden;
+	margin: 0em;
+	padding: 0em;
+	margin-left: .4em;
+}
+
+
+/* Hoe krijg ik die gap weg? */
+main > section:nth-of-type(2) section ul {
+	display: flex;
+	overflow: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	overscroll-behavior-x: contain;
+	margin-bottom: 1.5em;
+}
+
+main > section:nth-of-type(2) section ul li {
+	position: relative;
+	flex-basis: 20em;
+	flex-shrink: 0;
+	scroll-snap-align: center;
+}
+
+main > section:nth-of-type(2) section ul li img {
+	height: 25em;
+	object-fit: cover;
+}
+
+main > section:nth-of-type(2) section ul li a {
+	position: absolute;
+	left: 0.5em;
+	bottom: 0.5em;
+	z-index: 5;
+
+	display: grid;
+}
+
+/* de tekst over de afbeeldingen stijl */
+main > section:nth-of-type(2) section ul li a span:nth-of-type(1) {
+	background-color: black;
+	font-weight: 200;
+	font-size: 1em;
+	padding: 0.2em;
+	margin: 0.1em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	border-radius: 15em;
+}
+
+main > section:nth-of-type(2) section ul li a span:nth-of-type(2) {
+	font-size: 1.5em;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+}
+
+main > section:nth-of-type(2) section ul li a span:nth-of-type(3) {
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+
+
+
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+/* 
+section:first-of-type img {
+	display: inline-block;
+	grid-area: 1/1;
+} */
+
+/* bron olive jones afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fearthackney.co.uk%2Fevents%2Folive-jones-23rd-apr-earth-london-tickets-7ded29%2F&psig=AOvVaw3zFBoLfg3TSKLb5yL9rORe&ust=1764574450579000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCICxppyumZEDFQAAAAAdAAAAABAE */
+
+/* bron blue october afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.spokesman.com%2Fstories%2F2023%2Fnov%2F14%2Fblue-october-will-spin-the-truth-around-at-a-sold-%2F&psig=AOvVaw0--ZAY5JeX0BkSN5CTM1zM&ust=1764574612624000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCLjjlfKumZEDFQAAAAAdAAAAABAz */
+
+/* bron don melodie club afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fpinguinradio.com%2Fmagazine%2Fdon-melody-club-psychonauten%2F&psig=AOvVaw2hVgAHXi5yhAhs9PvRjFrr&ust=1764574766647000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCJiqqLSvmZEDFQAAAAAdAAAAABAo */
+
+/* bron wintersleep afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.concertarchives.org%2Fbands%2Fwintersleep&psig=AOvVaw0oBUB5_klVt8t07l3DSRds&ust=1764574846090000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCNDCidqvmZEDFQAAAAAdAAAAABBG */
+
+/* bron winnie raeder afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fopen.spotify.com%2Fintl-de%2Fartist%2F1QnifH4HAt0yWP9A9IcoMK&psig=AOvVaw1I_DfefzL7bg2RdqsNY0LD&ust=1764574932398000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCJiH5JOwmZEDFQAAAAAdAAAAABAl */
+
+/* bron dj alchemist
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rotown.nl%2Fagenda%2Fdj-premier-x-the-alchemist%2F&psig=AOvVaw2b-qUqrD9dkf8lJqM2FkYX&ust=1764863550494000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCMiPhp_joZEDFQAAAAAdAAAAABAE */
+
+/* bron sadie jane
+/* https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.regioactive.de%2Fkonzert%2Fsadie-jean-early-twenties-tourture-berlin-kesselhaus-maschinenhaus-kulturbrauerei-2025-11-10-tickets-R2sgg4nCxq&psig=AOvVaw3T8wchWfFtrGoGKsuKSwSg&ust=1764864523156000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCIDGzermoZEDFQAAAAAdAAAAABAL */
+
+/* bron toeveogen opdracht hamburger menu dlo & fixed menu button */
