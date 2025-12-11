@@ -206,19 +206,35 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/Winnie_raeder.png" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  Wat heb ik niet geleerd?
+  Ik heb heeel veel geleerd met het maken van deze website. Vaak vasgelopen met vanalles en nogwat, maar door elke keer hulp te vragen en de oefeningen te doen op dlo kwam ik er achter hoe het werkte en kon ik dat weer meenemen in mijn site.
+  Annimaties heb ik geleerd. (zie de coole extra pagina :P)
+  Grid, wat heel nice is.
+  de @media, mega chill met de variables
+  en hoe je goed dingen kan selecteren in de css
+  Slideshow
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  Ik ben erg tevreden met wat ik heb gemaakt en merk ook door het te blijven doen en dingen op te zoeken of te vragen in de les, dat ik het steeds meer ging begrijpen en uiteindelijk een stuk gemakkelijker er door heen kon tegen t einde aan. Meer wetende wat ik kan doen om iets aan te passen.
+
+  <img src="readme-images/slideshow.png" width="375px" alt="top">
+  <img src="readme-images/lasers.png" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  Ik vond vooral de slideshow moeilijk en bepaalde positioneringen. Zoals de button in het midden plaatsen.
+  Ook had ik de link in de button gezet, maar hier kreeg ik een foutmelding van in de check. Dus heb die er uitgehaald, maar weet nu nog niet hoe ik een button kan linken aan een andere pagina.
+  Dit soort dingen zijn vaak voor gekomen, maar uiteindelijk valt het kwartje door uitleg of goede voorbeelden opzoeken en dan onthoud ik het voor een andere keer ook weer.
+  Ook greeg ik de video er niet in. Ik had er een gedownload, omdat ik dacht dat dat beter was dan koppelen aan youtube. Maar dat bestand was te groot om op github te plaasten. Dus heb het nog via youtube gedaan. Alleen ik kon de video van Winnie Raeder op een of andere manier niet laten afspelen in mijn site. Dus heb ik een video van een andere artiest er in gezet.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  Uiteindelijk heb ik het met iframe gedaan. Alleen de validator geeft een error. En er wordt css gebruikt in die code. Ik weet dus niet zo goed of dit erg is of niet. Maar omdat dat de enige manier was om het er in te zetten, voor hoe ver ik het weet, heb ik het er wel in laten staan.
+
+
+  <img src="readme-images/validator.png" width="375px" alt="bummer">
+  <img src="readme-images/video_error.png" width="375px" alt="bummer">
 </details>
 
 
@@ -270,6 +286,9 @@ https://cubic-bezier.com/#0,.47,1,.51 */
 /* ook met Ceren samen naar wat opdrachten gekeken en deze gemaakt
 
 Veel inspiratie gehaald uit de opdrachten van dlo */
+
+/* video olive jones youtube
+https://www.youtube.com/watch?v=z4WuAHhoylo&list=RDz4WuAHhoylo&start_radio=1 */
 
 /* Video Winnie Raeder
 https://www.youtube.com/watch?v=JJIlLeqShWo&list=RDJJIlLeqShWo&start_radio=1 */

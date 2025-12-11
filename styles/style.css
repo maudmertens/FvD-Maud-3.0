@@ -581,7 +581,7 @@ a {
 	text-align: start;
 	z-index: 1;
 	padding-right: 5em;
-	transition: 0.5s;
+	transition: 0.2s;
 	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
@@ -603,7 +603,7 @@ a {
 	scale: 1.05;
 	translate: -3px 0.5px;
 	box-shadow: 0px 0px var(--color-extra);
-	transition: 0.5s;
+	transition: 0.2s;
 	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
@@ -737,14 +737,15 @@ li[aria-label="moon"] div:last-of-type {
   animation-name: moon-shadow-animation;
 }
 
-/* Video */
+/* Video
 video {
 	padding: 0 0.7em;
 	margin-top: -3rem;
 	width: 100vw;
 	height: 100%;
 	border-radius: 7.5%;
-}
+} */
+
 
 /* Spotify */
 
@@ -813,12 +814,14 @@ iframe {
 		padding: 0;
 		background-color: #052455;
 	}
+
 	.loading_pagina section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		width: 100vw;
 		position: relative;
 	}
 
@@ -920,10 +923,8 @@ https://cubic-bezier.com/#0,.47,1,.51 */
 
 Veel inspiratie gehaald uit de opdrachten van dlo */
 
-/* Video Winnie Raeder
-https://www.youtube.com/watch?v=JJIlLeqShWo&list=RDJJIlLeqShWo&start_radio=1 */
-/* https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video */
-/* https://www.clipto.com/nl/media-downloader/youtube-downloader */
+/* video olive jones youtube
+https://www.youtube.com/watch?v=z4WuAHhoylo&list=RDz4WuAHhoylo&start_radio=1 */
 
 /* Spotify code gokopieerd en geplakt vanuit spotify -> als tip gekregen van studenyt assistente */
 
@@ -954,3 +955,6 @@ https://it.sonoma.edu/kb/website-support/siteimprove-how-fix-inline-frame-withou
 /* bron to reduce motion
 https://stackoverflow.com/questions/58931615/disable-animation-with-prefers-reduced-motion */
 /* https://github.com/jensimmons/cssremedy/issues/11 */
+
+/* bron icon
+https://icons.getbootstrap.com/icons/arrow-right-short/ */
