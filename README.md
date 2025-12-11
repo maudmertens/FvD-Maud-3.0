@@ -22,7 +22,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Blauwe piste 
 
   #### Je focus:
-  Responsive? 
+  Surfice plane
  
 </details>
 
@@ -127,20 +127,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | Maud              | student 2          | student 3    | student 4        |
-  | ---               | ---                | ---          | ---              |
-  | Structuur pagina  | en dit             | en ik dit    | en dan ik dat    |
-  | Foto slider       | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | Wss nog wel iets  |  ...               | ...          | ...              |
+  | Maud              
+  | ---               
+  | Structuur pagina 
+  | Foto slider       
+  | Wss nog wel iets  
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+ De studen assistenten hebben me geod kunnen helpen. De structuur van mijn pagina was oke, een paar kleine aanpassingen om het beter te maken. Ook meto elke section een h hebben, dat wist ik niet.
+ Verder nog vragen kunnen stellen over de slider en met hulp van David is dit ook gelukt uiteindelijk.
 
 </details>
 
@@ -156,6 +154,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
 
+  Ik kwam er tijdens de test achter dat een paar dingen nog niet helemaal top waren. Zoals de focus. die was er wel, maar nog niet mooi gestyled. 
+  Ik heb met de toegankelijkheid expres gewacht tot het einde. Zo weet ik in ieder geval dat de stuctuur goed is, en kan ik me daarna op deze details gaan focussen.
+
+  Aan de hand van de WCAG lijst, ben ik stap voor stap gaan kijken of het in mijn website zit, zo niet, heb ik het er in toegevoegd. Op een paar na, die me niet lukte.
+
+  Het is veel beter toegankelijk dan de originele website. Vooral de de fucus, skip to content link, en dark-mode. Ook animaties kunnen uit als je hier gevoelig voor bent.
+
 </details>
 
 
@@ -168,26 +173,26 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Again, met de studenten willen overleggen over de voortgang, maar niemand deelde zijn werk.
 
 
   ### Agenda voor meeting
-  samen met je groepje opstellen
+ 
+ Ik heb wat vragen over de button.
+ en over een indeling met img
+ en een animatie als daar tijd voor is
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+ 
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  Met alles ben ik een stuk verder gekomen door de hulp die ik kreeg. Het was duidelijk en alles is gelukt. De button was even een ding. We kregen m allebij niet op de jusite plek, maar uiteindelijk wel.
+  De basic uitleg van een animatie toevoegen was ook duidelijk
+  en de afmeting van bepaalde img is ook gelukt.
+
+
 
 </details>
 
@@ -229,8 +234,76 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+/* bron olive jones afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fearthackney.co.uk%2Fevents%2Folive-jones-23rd-apr-earth-london-tickets-7ded29%2F&psig=AOvVaw3zFBoLfg3TSKLb5yL9rORe&ust=1764574450579000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCICxppyumZEDFQAAAAAdAAAAABAE */
+
+/* bron blue october afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.spokesman.com%2Fstories%2F2023%2Fnov%2F14%2Fblue-october-will-spin-the-truth-around-at-a-sold-%2F&psig=AOvVaw0--ZAY5JeX0BkSN5CTM1zM&ust=1764574612624000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCLjjlfKumZEDFQAAAAAdAAAAABAz */
+
+/* bron don melodie club afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fpinguinradio.com%2Fmagazine%2Fdon-melody-club-psychonauten%2F&psig=AOvVaw2hVgAHXi5yhAhs9PvRjFrr&ust=1764574766647000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCJiqqLSvmZEDFQAAAAAdAAAAABAo */
+
+/* bron wintersleep afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.concertarchives.org%2Fbands%2Fwintersleep&psig=AOvVaw0oBUB5_klVt8t07l3DSRds&ust=1764574846090000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCNDCidqvmZEDFQAAAAAdAAAAABBG */
+
+/* bron winnie raeder afbeelding
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fopen.spotify.com%2Fintl-de%2Fartist%2F1QnifH4HAt0yWP9A9IcoMK&psig=AOvVaw1I_DfefzL7bg2RdqsNY0LD&ust=1764574932398000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCJiH5JOwmZEDFQAAAAAdAAAAABAl */
+
+/* bron dj alchemist
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rotown.nl%2Fagenda%2Fdj-premier-x-the-alchemist%2F&psig=AOvVaw2b-qUqrD9dkf8lJqM2FkYX&ust=1764863550494000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCMiPhp_joZEDFQAAAAAdAAAAABAE */
+
+/* bron sadie jane
+/* https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.regioactive.de%2Fkonzert%2Fsadie-jean-early-twenties-tourture-berlin-kesselhaus-maschinenhaus-kulturbrauerei-2025-11-10-tickets-R2sgg4nCxq&psig=AOvVaw3T8wchWfFtrGoGKsuKSwSg&ust=1764864523156000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCIDGzermoZEDFQAAAAAdAAAAABAL */
+
+/* bron opdracht hamburger menu dlo & fixed menu button */
+/* https://codepen.io/shooft/pen/JjQLVeB?editors=0010 */
+/* ... */
+
+/* easing functions
+https://css-tricks.com/ease-out-in-ease-in-out/ */
+
+/* David heeft veel geholpen ook met code uitleggen en dingen werkend te maken */
+
+/* cubic-bezier bron
+https://cubic-bezier.com/#0,.47,1,.51 */
+
+/* ook met Ceren samen naar wat opdrachten gekeken en deze gemaakt
+
+Veel inspiratie gehaald uit de opdrachten van dlo */
+
+/* Video Winnie Raeder
+https://www.youtube.com/watch?v=JJIlLeqShWo&list=RDJJIlLeqShWo&start_radio=1 */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video */
+/* https://www.clipto.com/nl/media-downloader/youtube-downloader */
+
+/* Spotify code gokopieerd en geplakt vanuit spotify -> als tip gekregen van studenyt assistente */
+
+/* googlemaps 
+https://www.google.com/maps/place/Tolhuistuin/@52.3830489,4.901418,17z/data=!4m6!3m5!1s0x47c609b391ad6ae3:0x2591225d95fe66c1!8m2!3d52.3831832!4d4.9032097!16s%2Fg%2F11b6cwgjvy?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D */
+
+/* bron icon reload
+https://www.flaticon.com/search?word=arrow%20refresh */
+
+/* bron icon arrow
+https://www.flaticon.com/free-icons/arrow/2 */
+
+/* bron om de reload te laten blijven draaien
+https://codepen.io/kmathmann/pen/RaGqRr */
+
+/* laser code (gewoon omdat t kan :))
+https://www.prowaretech.com/articles/current/css/loading-page-laser-lights#! */
+
+/* skip to content bron
+https://www.makethingsaccessible.com/guides/creating-a-skip-to-content-link/ */
+
+/* dark mode 
+https://stuffandnonsense.co.uk/blog/redesigning-your-product-and-website-for-dark-mode */
+
+/* bron title in iframe
+https://it.sonoma.edu/kb/website-support/siteimprove-how-fix-inline-frame-without-text-alternative */
+
+/* bron to reduce motion
+https://stackoverflow.com/questions/58931615/disable-animation-with-prefers-reduced-motion */
+/* https://github.com/jensimmons/cssremedy/issues/11 */
 
 </details>

@@ -21,26 +21,101 @@
 	--color-text:#fff;
 	--color-background:#0093d0;
 	--font-family:"Helvetica Neue";
-	--color-dark:#000;
+	--color-black:#000;
+	--color-hover:rgb(255, 105, 105);
+	--color-link:#ffffff;
+	--color-extra:#052455;
+	--color-focus:#052455;
+	--moon-color: #052455;
+	--moon-shadow: #0093d0;
+	--color-button-hover: #8fcfff;
+}
 
+@media (prefers-color-scheme: dark) {
+	:root {
+	--color-text:#fff;
+	--color-background:#1d0849;
+	--font-family:"Helvetica Neue";
+	--color-black:#000;
+	--color-hover:rgb(255, 105, 105);
+	--color-link:#ffffff;
+	--color-extra:#a88be6;
+	--color-focus:#a88be6;
+	--moon-color: #a88be6;
+	--moon-shadow: #1d0849;
+	--color-button-hover:#3f1593;
+	}
+}
+
+@media (prefers-contrast: more) {
+	:root {
+	--color-text:#fff;
+	--color-background:#0034ad;
+	--font-family:"Helvetica Neue";
+	--color-black:#000;
+	--color-hover:#ffff00;
+	--color-link:#ffffff;
+	--color-extra:#00ffff;
+	--color-focus:#00ffff;
+	--moon-color: #00ffff;
+	--moon-shadow: #0034ad;
+	--color-button-hover: #0034ad;
+	}
 }
 
 
-
-
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation: none !important;
+  }
+}
 
 /****************/
-/* JOUW STYLING */
+/* MIJN STYLING */
 /****************/
 
+/* Basic styling */
 body {
 	background-color: var(--color-background);
-	margin-top: 1em;
+	margin-top: 1.5em;
 	font-family: var(--font-family);
 	line-height: 1.5;
 	font-weight: 400;
 	font-size: 1rem;
+	cursor: default;
 }
+
+header > a {
+	position: absolute;
+	margin: 1.5rem;
+	display: block;
+	padding: 0.5rem;
+	background-color: #052455;
+	border-radius: 2em;
+	opacity: 0%;
+}
+
+header > a:focus {
+	opacity: 100%;
+}
+
+a:focus-visible, h1:focus-visible, h2:focus-visible, h3:focus-visible, ul:focus-visible {
+	outline: 6px dotted var(--color-focus);
+	outline-offset: -0.2em;
+	border: 5px solid var(--color-hover);
+	padding: 0.5em;
+}
+
+a:active {
+	color: var(--color-hover);
+	transition: 0.2s;
+}
+
+.andere_pagina {
+	padding: 0;
+	margin: 0;
+}
+
 
 /* ************** */
 /* button menu */
@@ -49,18 +124,22 @@ header {
 	position: relative;
 }
 
-/* hoe kan de button overal boven blijven? */
 header button {
 	padding: 1.5em 1em;
 	display: grid;
 	place-items: center;
 	border-radius: 50%;
 	border: none;
-	background-color: pink;
+	background-color: transparent;
 	margin-left: 0.4em;
 	cursor: pointer;
-	position: sticky;
+	position: fixed;
 	top: 0.4em;
+	z-index: 20;
+}
+
+header button:hover span {
+	background-color: var(--color-hover);
 }
 
 header button span {
@@ -69,6 +148,7 @@ header button span {
 	width: 1.5em;
 	height: .2em;
 	background-color: var(--color-text);
+	z-index: 20;
 
 	transition-duration: .5s;
 }
@@ -86,6 +166,7 @@ header button span:nth-last-of-type(3) {
 /* button open */
 header button[aria-expanded="true"] span:nth-last-of-type(1) {
 	transform:rotate(45deg) scalex(1.25);
+	
 }
 
 header button[aria-expanded="true"] span:nth-last-of-type(2) {
@@ -105,9 +186,10 @@ header nav {
 	position: fixed;
 	left: 0;
 	right: 0;
-	top: 4em;
+	top: 0;
+	padding-top: 4em;
 	bottom: 0;
-	background-color:#0093d0;
+	background-color: var(--color-background);
 	color: var(--color-text);
 	z-index: 10;
 	translate: -100% 0%;
@@ -134,6 +216,18 @@ header nav ul {
 	padding-left: 1em;
 }
 
+
+nav a {
+	text-decoration: none;
+}
+
+nav li {
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.5em;
+}
+
+/* Header stylo  */
 header p {
 	font-weight: 600;
 	color: var(--color-text);
@@ -142,46 +236,21 @@ header p {
 }
 
 header p span {
-	opacity: 0.3;
+	opacity: 0.5;
 }
 
-/* ik probeer de opacity van het woord cultuur uit te zetten, maar krijg het niet voor elkaar */
 header p a {
 	color: var(--color-text);
 	opacity: 1;
 	text-decoration: underline;
 }
 
-
-/* header p a:visited {
-	color: var(--color-text);
-	opacity: 1;
-} */
-
-
-nav a {
-	text-decoration: none;
-}
-
-/* kleur nav werkt niet */
-/* nav a:visited {
-	color: var(--color-dark);
-} */
-
 li {
 	list-style-type: none;
 }
 
-nav li {
-	font-size: 2.5rem;
-	font-weight: 700;
-	line-height: 1.5em;
-
-}
-
 h1 {
 	color: var(--color-text);
-	/* font-family: var(--font-family); */
 	font-size: 8em;
 	letter-spacing: -0.04em;
 	overflow-x: hidden;
@@ -194,12 +263,11 @@ h1 {
 
 h2 {
 	color: var(--color-text);
-	/* font-family: var(--font-family); */
 	letter-spacing: -0.04em;
 	font-size: 6em;
 	overflow-x: hidden;
-	margin: 0em;
-	margin-left: .07em;
+	margin-top: -0.2em;
+	margin-left: .1em;
 	padding: 0em;
 }
 
@@ -237,7 +305,7 @@ main > section:first-of-type > ul li a {
 
 /* de tekst over de afbeeldingen stijl */
 main > section:first-of-type > ul li a span:nth-of-type(1) {
-	background-color: black;
+	background-color: var(--color-black);
 	font-weight: 200;
 	font-size: 1em;
 	padding: 0.2em;
@@ -245,6 +313,7 @@ main > section:first-of-type > ul li a span:nth-of-type(1) {
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	border-radius: 15em;
+	justify-self: start;
 }
 
 main > section:first-of-type > ul li a span:nth-of-type(2) {
@@ -261,7 +330,7 @@ main > section:first-of-type > ul li a span:nth-of-type(3) {
 /* 2e en 4e blokje beetje andere stijling */
 /* 2e blokje */
 main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(2) {
-	background-color: black;
+	background-color: var(--color-black);
 	font-weight: 200;
 	font-size: 1em;
 	padding: 0.2em;
@@ -269,6 +338,7 @@ main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(2) {
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	border-radius: 15em;
+	justify-self: start;
 }
 
 main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(3) {
@@ -285,7 +355,7 @@ main > section:first-of-type > ul li:nth-of-type(2) a span:nth-of-type(4) {
 
 /* 4e blokje */
 main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(2) {
-	background-color: black;
+	background-color: var(--color-black);
 	font-weight: 200;
 	font-size: 1em;
 	padding: 0.2em;
@@ -293,6 +363,7 @@ main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(2) {
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	border-radius: 15em;
+	justify-self: start;
 }
 
 main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(3) {
@@ -307,9 +378,6 @@ main > section:first-of-type > ul li:nth-of-type(4) a span:nth-of-type(4) {
 }
 
 
-/* ******* */
-/* stijl van de vandaag linkjes */
-/* ******* */
 
 h3 {
 	color: var(--color-text);
@@ -320,11 +388,71 @@ h3 {
 	margin: 0em;
 	padding: 0em;
 	margin-left: .4em;
+	line-height: 1.5em;
 }
 
 
-/* Hoe krijg ik die gap weg? */
-main > section:nth-of-type(2) section ul {
+/* ******* */
+/* stijl van de datum linkjes */
+/* ******* */
+
+main section:nth-of-type(2) section ul li a {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	border-bottom: 1px solid;
+	margin-bottom: 0.7em;
+}
+
+main section:nth-of-type(2) section ul li a span:nth-of-type(1) {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 15em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	font-weight: 200;
+	font-size: 1em;
+	align-self: start;
+	color: #ffffffba;
+}
+
+main section:nth-of-type(2) section ul li a span:nth-of-type(2) {
+	font-size: 1.2em;
+	font-weight: 500;
+	letter-spacing: -0.03em;
+	line-height: 1.2em;
+
+
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+
+main section:nth-of-type(2) section ul li a span:nth-of-type(3) {
+	font-weight: 200;
+	font-size: 1em;
+	line-height: 1.4em;
+	color: #ffffffba;
+
+	grid-column: span 2;
+	
+}
+
+main section:nth-of-type(2) section ul li:hover a span {
+	color: var(--color-text);
+	translate: 0.5rem 0em;
+	transition: 0.5s;	
+}
+
+main section:nth-of-type(2) section ul li a span {
+	transition: 0.5s;	
+}
+
+
+/* ******* */
+/* stijl van de vandaag linkjes */
+/* ******* */
+
+main section:nth-of-type(2) section:nth-of-type(1) ul {
 	display: flex;
 	overflow: scroll;
 	scroll-snap-type: x mandatory;
@@ -333,52 +461,73 @@ main > section:nth-of-type(2) section ul {
 	margin-bottom: 1.5em;
 }
 
-main > section:nth-of-type(2) section ul li {
+main section:nth-of-type(2) section:nth-of-type(1) ul li {
 	position: relative;
 	flex-basis: 20em;
 	flex-shrink: 0;
 	scroll-snap-align: center;
 }
 
-main > section:nth-of-type(2) section ul li img {
-	height: 25em;
-	object-fit: cover;
+main section:nth-of-type(2) section:nth-of-type(1) ul li:hover a span {
+	translate: 0rem 0em;
+	transition: 0s;	
 }
 
-main > section:nth-of-type(2) section ul li a {
+main section:nth-of-type(2) section:nth-of-type(1) ul li img {
+	height: 25em;
+	object-fit: cover;
+	width: 100%;
+}
+
+main section:nth-of-type(2) section:nth-of-type(1) ul li a {
 	position: absolute;
-	left: 0.5em;
 	bottom: 0.5em;
 	z-index: 5;
 
 	display: grid;
+	grid-template-columns: 1fr;
 }
 
+
 /* de tekst over de afbeeldingen stijl */
-main > section:nth-of-type(2) section ul li a span:nth-of-type(1) {
-	background-color: black;
+main section:nth-of-type(2) section:nth-of-type(1) ul li a {
+	border-bottom: none;
+}
+
+main section:nth-of-type(2) section ul li a:focus-visible {
+	outline: 6px dotted var(--color-focus);
+	outline-offset: -0.2em;
+	border: 5px solid var(--color-hover);
+	padding: 0.5em;
+}
+
+main section:nth-of-type(2) section:nth-of-type(1) ul li a span:nth-of-type(1) {
+	background-color: var(--color-black);
 	font-weight: 200;
 	font-size: 1em;
 	padding: 0.2em;
-	margin: 0.1em;
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	border-radius: 15em;
+	justify-self: start;
+	color: var(--color-text);
 }
 
-main > section:nth-of-type(2) section ul li a span:nth-of-type(2) {
+main section:nth-of-type(2) section:nth-of-type(1) ul li a span:nth-of-type(2) {
 	font-size: 1.5em;
 	font-weight: 500;
 	letter-spacing: -0.03em;
+	grid-row-start: auto;
+	grid-column-start: auto;
+	color: var(--color-text);
 }
 
-main > section:nth-of-type(2) section ul li a span:nth-of-type(3) {
+main section:nth-of-type(2) section:nth-of-type(1) ul li a span:nth-of-type(3) {
 	font-size: 1.3em;
 	font-weight: 300;
+	grid-column: auto;
+	color: var(--color-text);
 }
-
-
-
 
 
 img {
@@ -388,14 +537,351 @@ img {
 
 a {
 	text-decoration: none;
-	color: white;
+	color: var(--color-link);
 }
 
-/* 
-section:first-of-type img {
-	display: inline-block;
-	grid-area: 1/1;
-} */
+/* ******************* */
+/* STIJL ANDERE PAGINA */
+/* ******************* */
+
+.andere_pagina header h1 {
+	position: absolute;
+	left: 0.7rem;
+	bottom: 1rem;
+	font-size: 4rem;
+	opacity: 90%;
+}
+
+.andere_pagina header img {
+	height: 80vh;
+	width: 100vw;
+	object-fit: cover;
+}
+
+.andere_pagina main {
+	position: relative;
+}
+
+/* Button stijl */
+.andere_pagina main > button {
+	background-color:var(--color-extra);
+	color: var(--color-button-hover);
+	border-radius: 1em;
+	border: none;
+	padding: 1em;
+	font-size: 1.05em;
+	letter-spacing: 0.05em;
+	position: sticky;
+	cursor: pointer;
+	left: 1rem;
+	right: 1rem;
+	width: calc(100% - 2rem);
+	top: 3.3rem;
+	translate: 0 -0.7em;
+	text-align: start;
+	z-index: 1;
+	padding-right: 5em;
+	transition: 0.5s;
+	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+.andere_pagina main button:hover {
+	background-color:var(--color-button-hover);
+	color: var(--color-focus);
+	font-weight: 600;
+	scale: 1.05;
+	box-shadow: -4px 4px var(--color-extra);
+	transition: 0.5s;
+	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.andere_pagina main button:active {
+	background-color:var(--color-hover);
+	color: var(--color-focus);
+	font-weight: 600;
+	scale: 1.05;
+	translate: -3px 0.5px;
+	box-shadow: 0px 0px var(--color-extra);
+	transition: 0.5s;
+	transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+/* stijl programma */
+.andere_pagina h2 {
+	font-size: 5em;
+}
+
+.andere_pagina section p {
+	padding: 0.7em;
+	color: var(--color-text);
+	line-height: 1.7em;
+}
+
+.andere_pagina section:nth-of-type(1) p:nth-of-type(1) {
+	font-size: .9em;
+	opacity: 70%;
+	padding-top: 0em;
+	margin: 0em;
+}
+
+.andere_pagina section:nth-of-type(1) p:nth-of-type(2) {
+	font-weight: 500;
+	display: grid;
+}
+
+.andere_pagina section:nth-of-type(1) a {
+	position: relative;
+	font-weight: 550;
+	padding-left: 0.7em;
+	margin-bottom: 2em;
+	color: var(--color-extra);
+}
+
+/* animatie pijl */
+.andere_pagina section:nth-of-type(1) a::after {
+	content: '';
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	top: 50%;
+	right: -2rem;
+	translate: 0 -50%;
+	background-image: url(../images/right-arrow.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+	pointer-events: none;
+}
+
+.andere_pagina section:nth-of-type(1) a:hover::after {
+	animation: arrow .5s infinite;
+}
+
+@keyframes arrow {
+	0% {
+	translate: 0rem -50%;
+	}
+
+	50% {
+		translate: 2rem -50%;
+	}
+
+	100% {
+	translate: 0rem -50%;
+	}
+}
+
+/* stijl line up  */
+.andere_pagina section h2 {
+	margin-top: 0.5em;
+	font-size: 3em;
+	padding-left: 0.3rem;
+}
+
+.andere_pagina section:nth-of-type(2) p:nth-of-type(1) {
+	color:var(--color-extra);
+	font-size: 1.3em;
+	font-weight: 500;
+	padding-left: 0.5em;
+}
+
+.andere_pagina section:nth-of-type(2) ul li:first-of-type {
+	color: var(--color-text);
+	font-size: 1.3em;
+	padding: 1.7em;
+	margin-left: .5em;
+}
+
+/* animatie moon */
+@keyframes moon-animation {
+  0% { translate:140% -362%; }
+  50% { translate:50% -362%; }
+  100% { translate:140% -362%; }
+}
+
+@keyframes moon-shadow-animation {
+  0% { translate: 50% -462%; }
+  50% { translate:150% -462%; }
+  100% { translate:50% -462%; }
+}
+
+li[aria-label="moon"] div:first-of-type {
+	background-color: var(--moon-color);
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	translate: 140% -362%
+}
+li[aria-label="moon"] div:last-of-type {
+	background-color: var(--moon-shadow);
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	translate: 100% -462%
+}
+
+.andere_pagina section:nth-of-type(2) ul:hover div {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0,.47,1,.51);
+}
+
+.andere_pagina ul div:first-of-type {
+  animation-name: moon-animation;
+}
+
+.andere_pagina ul div:last-of-type {
+  animation-name: moon-shadow-animation;
+}
+
+/* Video */
+video {
+	padding: 0 0.7em;
+	margin-top: -3rem;
+	width: 100vw;
+	height: 100%;
+	border-radius: 7.5%;
+}
+
+/* Spotify */
+
+iframe {
+	padding: 0.7em;
+	width: 100vw;
+	height: 80vh;
+}
+
+.andere_pagina h3 {
+	margin-top: 1em;
+	font-size: 1.5em;
+}
+
+.andere_pagina footer a {
+	padding-left: 2em;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+}
+
+/* stijl linkjes route naar tolhuistuin */
+.andere_pagina section:nth-of-type(4) a {
+	text-decoration: underline;
+}
+
+.andere_pagina a:active {
+	color: var(--color-hover);
+}
+
+/* animatie reload */
+.andere_pagina footer a::after {
+	content: '';
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	left: 0.7em;
+	translate: 0% 20%;
+	background-image: url(../images/reload.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+}
+
+.andere_pagina footer a:hover::after {
+	animation: reload 2s normal linear infinite;
+	/* transition-timing-function: linear; */
+}
+
+@keyframes reload {
+	0% {
+		rotate: 0deg;
+	}
+
+	100% {
+		rotate: 360deg;
+	}
+}
+
+
+
+/* loading animatie */
+
+	.loading_pagina {
+		margin: 0;
+		padding: 0;
+		background-color: #052455;
+	}
+	.loading_pagina section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		position: relative;
+	}
+
+	.loading_pagina h1 {
+		opacity: 0%;
+		font-size: 0;
+	}
+
+	.loading_pagina section > div {
+		position: absolute;
+	}
+
+	.loading_pagina section > div a {
+		color: rgb(221, 255, 110);
+	}
+
+	.loading_pagina li {
+		display: flex;
+		align-items: center;
+		transform: perspective(1px) rotateX(90deg);
+		transform-style: preserve-3d;
+	}
+	
+	@keyframes loading {
+		0%,100% {
+			height: 0;
+			transform: translateZ(-20px);
+		}
+		25% {
+			height: 25px;
+			transform: translateZ(20px);
+		}
+		50% {
+			height: 50px;
+			transform: translateZ(-20px);
+		}
+		75% {
+			height: 75px;
+			transform: translateZ(20px);
+		}
+	}
+
+	.loading_pagina li div {
+		background-color: rgb(255, 0, 115);
+		animation: loading .8s ease-in-out infinite;
+		width: 10px;
+		height: 100vh;
+		overflow: hidden;
+		box-shadow: 0 0 5px rgb(255, 0, 0);
+	}
+
+	.loading_pagina li div:nth-child(2) {animation-delay: .1s;}
+	.loading_pagina li div:nth-child(3) {animation-delay: .2s;}
+	.loading_pagina li div:nth-child(4) {animation-delay: .3s;}
+	.loading_pagina li div:nth-child(5) {animation-delay: .4s;}
+	.loading_pagina li div:nth-child(6) {animation-delay: .5s;}
+	.loading_pagina li div:nth-child(7) {animation-delay: .6s;}
+	.loading_pagina li div:nth-child(8) {animation-delay: .7s;}
+
+
+/* ******* */
+/* BRONNEN */
+/* ******* */
 
 /* bron olive jones afbeelding
 https://www.google.com/url?sa=i&url=https%3A%2F%2Fearthackney.co.uk%2Fevents%2Folive-jones-23rd-apr-earth-london-tickets-7ded29%2F&psig=AOvVaw3zFBoLfg3TSKLb5yL9rORe&ust=1764574450579000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCICxppyumZEDFQAAAAAdAAAAABAE */
@@ -418,4 +904,53 @@ https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rotown.nl%2Fagenda%2Fdj-pr
 /* bron sadie jane
 /* https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.regioactive.de%2Fkonzert%2Fsadie-jean-early-twenties-tourture-berlin-kesselhaus-maschinenhaus-kulturbrauerei-2025-11-10-tickets-R2sgg4nCxq&psig=AOvVaw3T8wchWfFtrGoGKsuKSwSg&ust=1764864523156000&source=images&cd=vfe&opi=89978449&ved=0CBgQjhxqFwoTCIDGzermoZEDFQAAAAAdAAAAABAL */
 
-/* bron toeveogen opdracht hamburger menu dlo & fixed menu button */
+/* bron opdracht hamburger menu dlo & fixed menu button */
+/* https://codepen.io/shooft/pen/JjQLVeB?editors=0010 */
+/* ... */
+
+/* easing functions
+https://css-tricks.com/ease-out-in-ease-in-out/ */
+
+/* David heeft veel geholpen ook met code uitleggen en dingen werkend te maken */
+
+/* cubic-bezier bron
+https://cubic-bezier.com/#0,.47,1,.51 */
+
+/* ook met Ceren samen naar wat opdrachten gekeken en deze gemaakt
+
+Veel inspiratie gehaald uit de opdrachten van dlo */
+
+/* Video Winnie Raeder
+https://www.youtube.com/watch?v=JJIlLeqShWo&list=RDJJIlLeqShWo&start_radio=1 */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video */
+/* https://www.clipto.com/nl/media-downloader/youtube-downloader */
+
+/* Spotify code gokopieerd en geplakt vanuit spotify -> als tip gekregen van studenyt assistente */
+
+/* googlemaps 
+https://www.google.com/maps/place/Tolhuistuin/@52.3830489,4.901418,17z/data=!4m6!3m5!1s0x47c609b391ad6ae3:0x2591225d95fe66c1!8m2!3d52.3831832!4d4.9032097!16s%2Fg%2F11b6cwgjvy?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D */
+
+/* bron icon reload
+https://www.flaticon.com/search?word=arrow%20refresh */
+
+/* bron icon arrow
+https://www.flaticon.com/free-icons/arrow/2 */
+
+/* bron om de reload te laten blijven draaien
+https://codepen.io/kmathmann/pen/RaGqRr */
+
+/* laser code (gewoon omdat t kan :))
+https://www.prowaretech.com/articles/current/css/loading-page-laser-lights#! */
+
+/* skip to content bron
+https://www.makethingsaccessible.com/guides/creating-a-skip-to-content-link/ */
+
+/* dark mode 
+https://stuffandnonsense.co.uk/blog/redesigning-your-product-and-website-for-dark-mode */
+
+/* bron title in iframe
+https://it.sonoma.edu/kb/website-support/siteimprove-how-fix-inline-frame-without-text-alternative */
+
+/* bron to reduce motion
+https://stackoverflow.com/questions/58931615/disable-animation-with-prefers-reduced-motion */
+/* https://github.com/jensimmons/cssremedy/issues/11 */

@@ -5,19 +5,14 @@ console.log("hi");
 var vegaBurgerMenu = document.querySelector("header button");
 vegaBurgerMenu.onclick = vegaBurgerMenuKlik;
 function vegaBurgerMenuKlik() {
-    if
-    (vegaBurgerMenu.ariaExpanded == "false") {
-    vegaBurgerMenu.ariaExpanded = "true"
+    var deNav = document.querySelector("header nav");
+    deNav.classList.toggle("toonMenu");
+    if (vegaBurgerMenu.ariaExpanded == "true") {
+        vegaBurgerMenu.ariaExpanded = "false"
     }
     else {
-    vegaBurgerMenu.ariaExpanded = "false"
+        vegaBurgerMenu.ariaExpanded = "true"
     }
 }
 
-var vegaBurgerMenu = document.querySelector("header button");
-vegaBurgerMenu.onclick = toggleMenu;
-function toggleMenu() {
-    var deNav = document.querySelector("header nav");
-    deNav.classList.toggle("toonMenu");
-}
 
